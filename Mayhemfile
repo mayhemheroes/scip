@@ -1,0 +1,7 @@
+project: rnshah9/scip
+target: scip
+tests: null
+
+cmds:
+  - cmd: /repo/build/bin/scip /test -AMPL
+    filepath: /test.nl
