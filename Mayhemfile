@@ -1,6 +1,5 @@
-project: rnshah9/scip
+project: scip
 target: scip
-tests: null
 
 cmds:
   - cmd: /repo/build/bin/scip /test -AMPL
