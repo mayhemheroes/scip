@@ -11,16 +11,13 @@ RUN cmake ..
 RUN make -j8
 RUN make install
 
-ADD . /repo
+COPY . /repo
 WORKDIR /repo/build
-RUN cmake .. -DPAPILO=OFF -DZIMPL=OFF -DIPOPT=OFF
+RUN cmake .. -DPAPILO=OFF -DZIMPL=OFF -DIPOPT=OFF -DCMAKE_INSTALL_PREFIX=/install
 RUN make -j8
-
-RUN mkdir -p /deps
-RUN ldd /repo/build/bin/scip | tr -s '[:blank:]' '\n' | grep '^/' | xargs -I % sh -c 'cp % /deps;'
+RUN make install
 
 FROM ubuntu:20.04 as package
-
-COPY --from=builder /deps /deps
-COPY --from=builder /repo/build/bin/scip /repo/build/bin/scip
-ENV LD_LIBRARY_PATH=/deps
+RUN apt-get update
+RUN DEBIAN_FRONTEND=noninteractive apt-get install -y libreadline-dev
+COPY --from=builder /install /install
