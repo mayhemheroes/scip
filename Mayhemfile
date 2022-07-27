@@ -3,3 +3,4 @@ target: scip
 
 cmds:
   - cmd: /install/bin/scip /test -AMPL
+    filepath: /test.nl
