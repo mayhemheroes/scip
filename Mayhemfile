@@ -2,5 +2,4 @@ project: scip
 target: scip
 
 cmds:
-  - cmd: /repo/build/bin/scip /test -AMPL
-    filepath: /test.nl
+  - cmd: /install/bin/scip /test -AMPL
