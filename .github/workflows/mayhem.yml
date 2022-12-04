@@ -59,7 +59,8 @@ jobs:
       fail-fast: false
       matrix:
         mayhemfile:
-          - mayhem/Mayhemfile
+          - mayhem/Mayhemfile_scip
+          - mayhem/Mayhemfile_SCIPintervalNegateReal
 
     steps:
       - uses: actions/checkout@v3
