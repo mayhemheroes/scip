@@ -1,0 +1,5 @@
+project: scip
+target: scipintervalnegatereal
+
+cmds:
+  - cmd: /fuzz_SCIPintervalNegateReal
