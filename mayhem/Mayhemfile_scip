@@ -1,0 +1,5 @@
+project: scip
+target: scip
+cmds:
+  - cmd: /mayhem/bin/scip /mayhem/test.nl -AMPL
+    filepath: /mayhem/test.nl

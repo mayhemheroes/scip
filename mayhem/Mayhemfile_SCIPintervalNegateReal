@@ -1,0 +1,5 @@
+project: scip
+target: scipintervalnegatereal
+cmds:
+  - cmd: /mayhem/fuzz_SCIPintervalNegateReal
+    libfuzzer: true
