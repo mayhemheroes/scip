@@ -1,0 +1,8 @@
+project: scip
+target: scip
+cmds:
+  - cmd: /mayhem/bin/scip /mayhem/test.nl -AMPL
+    filepath: /mayhem/test.nl
+    env:
+      MFUZZ_COMPAT_LEVEL: "1"   # scip errors on malformed .nl probe inputs; relax Mayhem's file-input detection
+    timeout: 30                 # AMPL reader + ASan/UBSan can exceed the 2s smoke default
